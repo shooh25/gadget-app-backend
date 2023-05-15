@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_09_100318) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_15_025602) do
+  create_table "computers", force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "cpu_name"
+    t.string "gpu_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "uid", null: false
-    t.string "user_name", null: false
-    t.string "photo_url"
     t.string "display_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name", null: false
+    t.string "photo_url"
     t.index ["uid"], name: "index_users_on_uid", unique: true
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
+
 end

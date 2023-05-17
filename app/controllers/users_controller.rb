@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   # テーブル一覧をGET /users.json
   def index
     users = User.all
@@ -11,17 +12,20 @@ class UsersController < ApplicationController
     render json: user
   end
 
-
   # インスタンス作成してPOST
   def create
     user = User.new(user_params)
+    
+    computer = Computer.new(user_id: user.uid)
+    user.computer = computer
+    user.save
+    
     if user.save
       render json: user
     else
       render json: user.errors
     end
   end
-
 
   # PUTCH/PUT
   def update

@@ -3,5 +3,6 @@ class User < ApplicationRecord
     self.primary_key = "uid"
 
     # アソシエーション
-    has_one :computer
+    has_one :computer, dependent: :destroy
+    accepts_nested_attributes_for :computer
 end

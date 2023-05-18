@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # 指定されたユーザー名のインスタンスをGET
   def show
-    user = User.find_by(user_name: params[:user_name])
+    user = User.find_by(uid: params[:uid])
     render json: user
   end
 

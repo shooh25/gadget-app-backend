@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def computer_params
-    params.require(:computer).permit(:user_id, :cpu_name, :gpu_name)
+    params.require(:computer).permit(:user_id, :cpu_name, :gpu_name, :mb_name, :memory_name, :ssd_name, :hdd_name, :case_name, :cooler_name, :power_name)
   end
 end
 

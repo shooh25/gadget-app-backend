@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_21_065820) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_015145) do
   create_table "computers", force: :cascade do |t|
     t.string "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "cpu_name"
     t.string "gpu_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "mb_name"
     t.string "memory_name"
     t.string "ssd_name"
@@ -28,11 +28,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_21_065820) do
 
   create_table "users", force: :cascade do |t|
     t.string "uid", null: false
-    t.string "display_name"
+    t.string "display_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_name", null: false
     t.string "photo_url"
+    t.string "desc"
     t.index ["uid"], name: "index_users_on_uid", unique: true
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end

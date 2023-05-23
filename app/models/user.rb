@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
     # アソシエーション
     has_one :computer, dependent: :destroy
-    accepts_nested_attributes_for :computer
+    has_one :gadget, dependent: :destroy
+    accepts_nested_attributes_for :computer, :gadget
 end

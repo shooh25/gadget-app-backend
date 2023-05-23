@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_015145) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_090037) do
   create_table "computers", force: :cascade do |t|
     t.string "user_id", null: false
     t.string "cpu_name"
@@ -24,6 +24,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_015145) do
     t.string "case_name"
     t.string "cooler_name"
     t.string "power_name"
+  end
+
+  create_table "gadgets", force: :cascade do |t|
+    t.string "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mouse_items"
+    t.string "keyboard_items"
+    t.string "monitor_items"
+    t.string "audio_items"
+    t.string "pad_items"
+    t.string "phone_items"
   end
 
   create_table "users", force: :cascade do |t|

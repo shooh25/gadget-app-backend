@@ -5,6 +5,11 @@ class ComputersController < ApplicationController
         render json: computers
     end
 
+    def show
+        gadget = Computer.find(params[:id])
+        render json: gadget
+    end
+
     # def show
     #     computer = Computer.find_by(user_id: params[:user_id])
     #     render json: computer

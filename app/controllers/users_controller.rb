@@ -65,6 +65,4 @@ class UsersController < ApplicationController
   def gadget_params
     params.require(:gadget).permit(:user_id, :mouse_items  => [], :keyboard_items  => [], :monitor_items  => [], :audio_items  => [], :pad_items  => [], :phone_items  => [], )
   end
-
 end
-

@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "https://mygadgets.vercel.app/"
+    origins "https://mygadgets.vercel.app"
     # origins "localhost:3000", "https://mygadgets.herokuapp.com"
 
     resource "*",
